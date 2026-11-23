@@ -5,18 +5,20 @@ fun main() {
 }
 
 class Solution {
+    fun fizzBuzz(n: Int): List<String> {
 
-    fun fizzBuzz(n : Int) : List<String>{
+        val output = mutableListOf<String>()
 
-        val output : MutableList<String> = mutableListOf()
-        for (i in 1..n){
-            var fizzBuzz = ""
-            if (i % 3 == 0){ fizzBuzz += "Fizz" }
-            if (i % 5 == 0){ fizzBuzz += "Buzz" }
-            if (fizzBuzz == "") { fizzBuzz = i.toString() }
-            output.add(fizzBuzz)
+        for(x in 1..n){
+            if(x % 3 == 0 && x % 5 == 0){
+                output.add("FizzBuzz")}
+            else if(x % 3 == 0){
+                output.add("Fizz")
+            } else if(x % 5 == 0){
+                output.add("Buzz")
+            } else
+                output.add(x.toString())
         }
         return output
     }
-
 }
