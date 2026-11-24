@@ -1,14 +1,10 @@
-fun twoSum(nums: IntArray, target: Int) : IntArray{
-
-        var twosum : MutableList<Int> = mutableListOf()
-
-        for ((i, num) in nums.withIndex()){
-            if (i != nums.lastIndex && (num + nums[i+1] == target)) {
-                twosum.add(i)
-                twosum.add(i+1)
+fun twoSum(nums: IntArray, target: Int): IntArray {
+        for (i in 1 until nums.size) {
+            for (j in i until nums.size) {
+                if ((nums[j-i]+nums[j] == target)) {
+                    return intArrayOf(j, j-i)
+                }
             }
         }
-
-        return twosum.toIntArray()
-
+        return intArrayOf(-1, -1)
     }
